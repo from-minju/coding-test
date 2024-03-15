@@ -47,3 +47,28 @@ if result==True:
 else:
     print("윤년이 아닙니다.")
 
+
+#pass문
+n = 3
+if n==3:
+    pass #어떤 처리도 실행하지 않고 넘어감. 
+else:
+    print(n)
+
+#단문의 if구문 - else문이 없을 경우에만 가능.
+if n%3==0:print(n)
+
+
+#while문
+#Ctrl + C :파이썬 프로그램을 강제로 끝내는 방법(무한루프에서 빠져나올때도 사용가능)
+#break문으로 무한루프 빠져나올 수 있음.
+while n>1:
+    print("while true")
+    n=n-1
+else:
+    print("while false")
+
+
+#범위 반복을 위한 for문
+
+
