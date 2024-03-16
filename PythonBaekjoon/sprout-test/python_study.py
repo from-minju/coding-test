@@ -26,13 +26,13 @@ if(10<= num1 <=20): #python3에서는 두개의 비교식을 and로 조합하는
 year = int(input("서기 몇 년? : "))
 result = True
 
-#방법1
+#방법1 : 논리연산자
 if (year%4==0 and year%100!=0) or year%400==0:
     result = True
 else:
     result = False
 
-##방법2
+#방법2 : 중첩if문
 if year%4==0:
     if year%100==0:
         result = False
@@ -40,6 +40,16 @@ if year%4==0:
             result = True
 else:
     result = False
+
+#방법3 : elif문
+if year%400==0:
+    result=true
+elif year%100==0:
+    result=False
+elif year%4==0:
+    result=True
+else:
+    result=False
 
 #결과 출력
 if result==True:
@@ -70,5 +80,64 @@ else:
 
 
 #범위 반복을 위한 for문
+for x in range(10): #range(10)의 범위 : 0~9
+    print(x, end=" ")
+    x+=1
+print()
+for x in range(1,5): #range(0,5)의 범위 : 1~4
+    print(x, end=" ")
+    x+=1
+print()
+for x in range(0,10,2): #range(0,10,2)의 범위 : 0~9까지 2만큼의 차이를 갖음.->0,2,4,6,8
+    print(x, end=" ")
+    x+=1
+print()
+
+#범위 반복을 위한 for문 예제2
+sum = 0
+for x in range(1,11):
+    sum += x
+    print("{0}을(를) 더하면 {1}".format(x, sum))
+print("1에서 10까지 모두 더하면..." + str(sum))
+print("1에서 10까지 모두 더하면...", sum) # +연산자로는 str + int가 불가능 / 하지만 print(str, int)는 가능. 띄어쓰기로 연결됨.
+
+#반복을 중지하는 break와 continue
+#FizzBuzz
+for x in range(1,21):
+    if(x%3==0) and (x%5==0):
+        print("FizzBuzz")
+        continue #근데 continue안써도 똑같긴함.
+    elif(x%3==0):
+        print("Fizz")
+    elif(x%5==0):
+        print("Buzz")
+    else:
+        print(x)
 
 
+#반복문에서 else블록을 사용할 경우
+#1. 반복문을 한 번도 실행하지 않았을 때.
+i=8
+while i<5: #조건이 거짓이라 반복문 실행 안함.
+    print("...")
+else:
+    print("반복문을 한 번도 실행하지 않았습니다.", i)
+
+#반복문을 모두 끝냈을때(단, break로 반복문을 빠져나오지 않았을 때만. braek문 만나면 else거치지 않고 바로 반복문 밖으로 빠져나감.)
+i=3
+while i<5:
+    print(i)
+    if i ==2 : break
+    i += 1
+else:
+    print("반복문을 모두 실행하였습니다.", i)
+print("반복문을 빠져나왔습니다.")
+
+#반복문에서 else 블록을 사용할 경우 예제2
+foodstuff = ["Banana", "Chocolate", "Mango", "Strawberry", "Melon"]
+for food in foodstuff:
+    if food == "Strawberry":
+        print("냉장고 안에 딸기가 있습니다!")
+        break
+else: #if문이 수행되지 않았을 경우 (if문이 수행되면 break문을 만나 밖으로 빠져나가기 때문.)
+    print("딸기가 없어요ㅠㅠ")
