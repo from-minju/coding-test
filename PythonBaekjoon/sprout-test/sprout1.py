@@ -89,3 +89,5 @@ for i in range(n-1):
     result = result*(n-1)
     n-=1
 print(result)
+
+#A+B-3
