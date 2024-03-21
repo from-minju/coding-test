@@ -1,27 +1,27 @@
-# #  <<새싹문제>>
+#  <<새싹문제>>
 
-# #-----------------------------------
-# # :: 배열 ::
+#-----------------------------------
+# :: 배열 ::
 
-# #X보다 작은 수
-# n, x = map(int, input().split())
-# a = list(map(int, input().split()))
-# for i in a:
-#     if(i < x):
-#         print(i, end=" ")
+#X보다 작은 수
+n, x = map(int, input().split())
+a = list(map(int, input().split()))
+for i in a:
+    if(i < x):
+        print(i, end=" ")
 
-# #개수 세기
-# n = int(input())
-# n_list = list(map(int, input().split()))
-# v = int(input())
-# num = 0
-# for i in n_list:
-#     if(i == v):
-#         num+=1
-# print(num)
+#개수 세기
+n = int(input())
+n_list = list(map(int, input().split()))
+v = int(input())
+num = 0
+for i in n_list:
+    if(i == v):
+        num+=1
+print(num)
 
-# #개수 세기 - 이미 있는 count함수 사용하기
-# print(n_list.count(v))
+#개수 세기 - 이미 있는 count함수 사용하기
+print(n_list.count(v))
 
 
 #과제 안 내신 분..?
@@ -33,4 +33,23 @@ answer = sorted(list(num30 - student_num_list))
 print(answer[0])
 print(answer[1])
 
+
+#행렬 덧셈
+n, m = map(int, input().split()) #n이 행, m이 열
+
+list_a = []
+list_b = []
+
+for row in range(n):
+    row = list(map(int, input().split()))
+    list_a.append(row)
+
+for row in range(n):
+    row = list(map(int, input().split()))
+    list_b.append(row)
+
+for row in range(n):
+    for column in range(m):
+        print(list_a[row][column] + list_b[row][column], end=" ")
+    print()
 
