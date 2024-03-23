@@ -53,3 +53,51 @@ for row in range(n):
         print(list_a[row][column] + list_b[row][column], end=" ")
     print()
 
+#-----------------------------------
+# :: 문자열 ::
+
+#아스키 코드 - ord() : 문자의 아스키 코드값을 리턴하는 함수
+asc = input()
+print(ord(asc))
+
+#단어 길이 재기
+string = input()
+print(len(string))
+
+#대소문자 바꾸기
+#string.isupper() : 대문자인지 True/False
+#string.lower() : 소문자로
+string = list(input())
+for i in string:
+    if i.isupper(): i = i.lower()
+    else: i = i.upper()
+    print(i, end="")
+
+#input()과 for문
+i = input()
+for i in string: #string을 for문에 넣으면 에러발생!
+    print(i)
+
+for i in input(): #for문에 바로 input()바로 넣으면 에러발생안함. 
+    print(i)
+
+#대소문자 바꾸기 - swapcase()함수 활용하기
+print(input().swapcase())
+
+#학점계산
+grade = input()
+dic = {'A+':'4.3', 'A0':'4.0', 'A-':'3.7',
+       'B+':'3.3', 'B0':'3.0', 'B-':'2.7',
+       'C+':'2.3', 'C0':'2.0', 'C-':'1.7',
+       'D+':'1.3', 'D0':'1.0', 'D-':'0.7',
+       'F':'0.0'}
+print(dic[grade])
+
+#문자와 문자열
+word = list(input())
+num = int(input())
+print(word[num-1])
+
+# 그대로 출력하기
+while True:
+    print(input())
