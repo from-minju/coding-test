@@ -98,6 +98,16 @@ word = list(input())
 num = int(input())
 print(word[num-1])
 
-# 그대로 출력하기
+# 그대로 출력하기 - 방법1
 while True:
-    print(input())
+    try:
+        print(input())
+    except EOFError:
+        break
+
+
+#문자열 9086번
+num = int(input())
+for i in range(num):
+    string_list = list(input())
+    print(string_list[0] + string_list[-1])
