@@ -105,9 +105,36 @@ while True:
     except EOFError:
         break
 
+#그대로 출력하기 - 방법2
+import sys
+s = sys.stdin.readlines()
+for i in s:
+    print(i.rstrip())
+
+
+# 그대로 출력하기2 - 방법1
+import sys
+data = sys.stdin.read()
+print(data, end='')
+
+# 그대로 출력하기2 - 방법2
+while True:
+    try:
+        print(input())
+    except EOFError:
+        break
+
 
 #문자열 9086번
 num = int(input())
 for i in range(num):
     string_list = list(input())
     print(string_list[0] + string_list[-1])
+
+# 빠른 A+B
+import sys
+input = sys.stdin.readline
+num = int(input())
+for i in range(num):
+    a, b = map(int, input().rstrip().split())
+    print(a+b)
