@@ -138,3 +138,15 @@ num = int(input())
 for i in range(num):
     a, b = map(int, input().rstrip().split())
     print(a+b)
+
+
+# 이상한 기호
+def cal(x, y):
+    return (x+y)*(x-y)
+
+a, b = map(int, input().split())
+print(cal(a, b))
+
+#검증수
+a, b, c, d, e = map(int, input().split())
+print((a*a + b*b + c*c + d*d + e*e) % 10)
