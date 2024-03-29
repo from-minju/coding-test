@@ -7,13 +7,13 @@ for i in range(x):
         print("*", end='')
     print()
 
-단어의 개수
+#단어의 개수
 strings = input()
 words_list = strings.split() #split()과 split('')의 차이
 print(len(words_list))
 
 
-# #단어 공부
+#단어 공부
 ex = list(input())
 alp_dic = {}
 for i in ex:
