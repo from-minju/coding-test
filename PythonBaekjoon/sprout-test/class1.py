@@ -144,7 +144,7 @@ for _ in range(10):
     ans.add(int(input()) % 42)
 print(len(ans))
 
-
+#==3/29(금)==
 #O, X퀴즈
 n = int(input())
 
@@ -167,3 +167,59 @@ for _ in range(n):
     
     print(total_score)
 
+
+# ACM 호텔
+tc = int(input())
+
+for _ in range(tc):
+    h, w, n = map(int, input().split())
+
+    turn = 0
+    room_num = ""
+
+    for i_w in range(w):
+        for i_h in range(h):
+            turn += 1
+
+            if turn == n:
+                room_num = str((i_h+1)*100 + i_w+1)
+                break 
+        
+        if turn == n : break
+
+    print(room_num)
+                
+
+# ACM 호텔 - ver2.
+test_case = int(input())
+for _ in range(test_case):
+    H, W, N = map(int, input().split())
+
+    if N%H==0:
+        floor = H
+        ho = N//H
+    else:
+        floor = N%H
+        ho = N//H + 1
+
+    print(floor*100 + ho)
+
+
+
+#==3/30(토)==
+# 알파벳 찾기
+S = list(input())
+
+for i in range(97, 123): #유니코드로 a:97, z:122
+    i = chr(i)
+    if(i in S):
+        result = S.index(i)
+    else: result = -1
+    print(result, end=' ')
+
+#알파벳 찾기 - ver2.
+S = input()
+for i in range(97, 123):
+    print(S.find(chr(i)), end=' ')
+
+        
