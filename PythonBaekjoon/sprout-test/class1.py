@@ -222,4 +222,19 @@ S = input()
 for i in range(97, 123):
     print(S.find(chr(i)), end=' ')
 
-        
+
+#최소, 최대
+n = int(input())
+numlist = list(map(int, input().split()))
+numlist.sort()
+print(numlist[0], numlist[-1])
+
+
+#숫자의 합
+n = int(input())
+strings = list(input())
+sum = 0
+for i in strings:
+    sum += int(i)
+print(sum)
+
