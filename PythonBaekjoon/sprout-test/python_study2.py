@@ -181,9 +181,10 @@ print(bag4)
 
 #-----------------------------------
 # :: 딕셔너리 dict {} ::
-#python3.6부터는 딕셔너리의 순서보존함. 이전에는 원래는 순서보장안함.
+#python3.6부터는 딕셔너리의 순서보존함. 이전에는 원래는 순서보장안함. / 중복허용안함.
 #{'김원필': 94, '강영현': '93', '박성진': 93, '윤도운': 95, '마이데이': 24}
 #빈 딕셔너리 만들기 : {}
+#값 추가하기 : dict['three'] = 3
 print("\n\n  :: 딕셔너리 ::")
 day6 = {'김원필':94, '강영현':'93', '박성진':93, '윤도운':95, '마이데이':24}
 print(day6)
@@ -210,10 +211,12 @@ print(sorted(day6.keys()))#딕셔너리 키목록을 오름차순으로 정렬
 #딕셔너리형을 열거하는 방법
 # - list(d.keys()) :키 목록을 리스트형으로
 # - sorted(d.keys()) : 키 목록을 정렬된 리스트형으로
-# - d.values() : 값 목록
+# - d.values() : 값 목록 ->리턴타입 : dict_values
 # - list(d.items()) : (키,값)으로 조합된 튜플형태의 리스트로 목록을 얻음.
 print(list(day6.items()))
 
+#key를 이용하여 value찾기 : ex) dict.get('A') -> A에 해당하는 값이 출력됨. 
+#value를 이용해 key찾기 : [k for k,v in dict.items() if v == 10] ->값이 10인것의 key가 출력됨. /or 키,값을 서로 뒤집기(대신중복값이없어야가능.)
 
 #딕셔너리를 for문과 함께 사용하는 예제1
 for member in day6.keys():
@@ -291,3 +294,9 @@ for i in number:
 # - list.sort() : [파괴적] 리스트 자체를 정렬시킴
 # - sorted(list) : [비파괴적] 새로 정렬된 리스트를 반환
 #새로운 정렬된 리스트를 반환하는 함수는 sorted 함수이고, 리스트 자체를 정렬시켜버리는 것은 sort 함수입니다.
+    
+# :: 리스트 뒤집기 ::
+# - reversed_list = list[::-1]
+# - list.reverse() : 원본 리스트가 바뀜.
+# - reversed_list = list(reversed(origin_list)) 
+#    : 원본바뀌지 않음. 그냥 reversed()만 하면 타입이 list_reverseiterator이므로 list로 바꿔줘야 함.
