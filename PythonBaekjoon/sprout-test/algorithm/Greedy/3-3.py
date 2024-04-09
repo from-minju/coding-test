@@ -1,4 +1,4 @@
-# 숫자 카드 게임
+# 숫자 카드 게임 - 내 답
 
 n, m = map(int, input().split())
 data = []

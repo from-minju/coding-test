@@ -1,4 +1,4 @@
-# 랜선 자르기
+# 랜선 자르기 ->시간초과
 
 K, N = map(int, input().split())
 already = []

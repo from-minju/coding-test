@@ -1,3 +1,4 @@
+#==1259. 팰린드롬수== 더 빠른 버전
 import sys
 while 1:
     n = sys.stdin.readline()[:-1]

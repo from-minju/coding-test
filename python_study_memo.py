@@ -32,3 +32,7 @@ print(s1.index('-', 3)) #3번째 위치부터 문자'-'가 처음 위치한 자�
 print(s1.find('-', 4, 6)) #-1 : 찾는 값이 없는 경우 -1반환.
 #print(s1.index('-', 4, 6)) #Error : ValueError: substring not found
 
+#in , not in ->리턴값: True/False
+text = "안녕, 내 이름은 미키야"
+result = "미키" in text
+print(result) #True
