@@ -36,3 +36,27 @@ print(s1.find('-', 4, 6)) #-1 : 찾는 값이 없는 경우 -1반환.
 text = "안녕, 내 이름은 미키야"
 result = "미키" in text
 print(result) #True
+
+
+#list의 요소를 Int로 변환
+#list_a = ['1', '2', '3', '4']   -> list_a = [1, 2, 3, 4] 로 바꾸고 싶을 때,
+list_a = ['1', '2', '3', '4']
+list_a = list(map(int, list_a))
+print(list_a)
+
+
+#list가 비어있는지(empty)확인하는 법
+list_empty = []
+if not list_empty: #list_empty가 비어있는 경우
+    print("list_empty는 비어있습니다.")
+
+
+#list의 모든 요소를 더하기. : sum(list)
+i = [1, 2, 3, 4, 5]
+print(sum(i))
+
+
+#어떤 정수m의 각 자릿수의 합 구하기
+m = 123
+mlist = list(map(int, str(m)))
+print(sum(mlist)) #1+2+3=6
