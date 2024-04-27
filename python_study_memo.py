@@ -60,3 +60,9 @@ print(sum(i))
 m = 123
 mlist = list(map(int, str(m)))
 print(sum(mlist)) #1+2+3=6
+
+
+#어떤 수의 제곱
+# num ** 2 : num의 제곱
+num = 5
+print(num ** 2) #25
