@@ -293,7 +293,9 @@ for i in number:
 # :: 정렬 메서드 ::
 # - list.sort() : [파괴적] 리스트 자체를 정렬시킴
 # - sorted(list) : [비파괴적] 새로 정렬된 리스트를 반환
+# - sorted_list = sorted(list, reverse=True) # 내림차순으로 정렬. ex)5-4-3-2-1
 #새로운 정렬된 리스트를 반환하는 함수는 sorted 함수이고, 리스트 자체를 정렬시켜버리는 것은 sort 함수입니다.
+
     
 # :: 리스트 뒤집기 ::
 # - reversed_list = list[::-1]
