@@ -8,11 +8,10 @@ while True:
         break
     else:
         data.sort()
-        
         if data[2] ** 2 == data[0]**2 + data[1]**2:
             print("right")
         else:
             print("wrong")
-            
+
 
 # num ** 2 : num의 제곱
