@@ -66,3 +66,18 @@ print(sum(mlist)) #1+2+3=6
 # num ** 2 : num의 제곱
 num = 5
 print(num ** 2) #25
+
+
+#정수를 리스트로 바꾸기
+num = 232443
+line = list(map(int,str(num)))
+print(line) # 	[2, 3, 2, 4, 4, 3] 요소가 정수임.
+
+x = 12345
+list = list(str(x))
+print(list) #['1', '2', '3', '4', '5'] 요소가 문자열임.
+
+
+#팩토리얼
+import math
+print(math.factorial(3))

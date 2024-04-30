@@ -304,3 +304,6 @@ for i in number:
 # - list.reverse() : 원본 리스트가 바뀜.
 # - reversed_list = list(reversed(origin_list)) 
 #    : 원본바뀌지 않음. 그냥 reversed()만 하면 타입이 list_reverseiterator이므로 list로 바꿔줘야 함.
+list = [1,2,3,4,5]
+for i in list[::-1]:
+    print(i) # 5 4 3 2 1
