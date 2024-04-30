@@ -16,42 +16,13 @@ for _ in range(t):
             if i==0: 
                 data[i][j]=j
             else:
+                #i층j호에 사는 사람 수 = (i-1)층의 1~j호에 사는 사람수의 합
                 sum = 0
                 for y in range(1, j+1):
                     sum += data[i-1][y]
                 data[i][j] = sum
 
-    print(data)
-
-    
-
-
-# def how_many (k, n):
-
-#     global sum
-
-#     if k==0: 
-#         sum = n
-#     else:
-
-#         for i in range(k):
-#             for j in range(1, n+1):
-#                 sum += how_many(i, j)
-        
-#     return sum
-
-
-# t = int(input())
-
-# for _ in range(t):
-
-#     k = int(input())
-#     n = int(input())
-
-#     sum = 0
-
-#     print(how_many(k, n))
-
+    print(data[k][n])
 
 
 '''
