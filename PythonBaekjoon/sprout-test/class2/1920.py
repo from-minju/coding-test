@@ -6,7 +6,7 @@ n_list = list(map(int, input().split()))
 m = int(input())
 m_list = list(map(int, input().split()))
 
-set_a = set(m_list) & set(n_list)
+set_a = set(m_list) & set(n_list) #m과 n에 공통으로 들어있는 수
 
 for i in m_list:
     if i in set_a: print(1)
