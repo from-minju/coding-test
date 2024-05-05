@@ -13,17 +13,21 @@ while True:
             if i=='(' or i=='[':
                 stack.append(i)
             elif i==')' or i==']':
+                if stack: #스택이 비어있지 않으면
+                    temp = stack.pop()
 
-                temp = stack.pop()
+                    if temp=='(': temp=')'
+                    elif temp=='[': temp=']'
 
-                if temp=='(': temp=')'
-                elif temp=='[': temp=']'
-
-                if i == temp:
-                    continue
-                else:
+                    if i == temp:
+                        continue
+                    else:
+                        result = "no"
+                        break
+                else: #(().와 같은 상황
                     result = "no"
                     break
+
         if stack: #스택이 비어있지 않으면
             result = "no"
             
