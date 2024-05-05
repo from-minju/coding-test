@@ -33,3 +33,8 @@ M개의 수 -> 이 수들이 A안에 존재하는지
 
 M개의 줄에 답 출력 1/0
 '''
+
+# N = int(input())
+# A = set(input().split())
+# M = int(input())
+# print('\n'.join('1' if num in A else '0' for num in input().split()))
