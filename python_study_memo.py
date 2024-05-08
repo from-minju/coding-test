@@ -81,3 +81,11 @@ print(list) #['1', '2', '3', '4', '5'] 요소가 문자열임.
 #팩토리얼
 import math
 print(math.factorial(3))
+
+
+# m행 n열의 2차원 리스트
+data = [[0]*n for _ in range(m)]
+#잘못된 방법
+list = [[0]*4]*3
+list[1][1] = 1
+print(list)
