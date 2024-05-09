@@ -9,12 +9,14 @@ n, m = map(int, input().split())
 
 maps = []
 
-dx = [-1, 0, 1, 0] #행
-dy = [0, 1, 0, -1] #열
-
 # nxm 미로 입력받기
 for i in range(n):
     maps.append(list(map(int, input())))
+
+#북동남서
+dx = [-1, 0, 1, 0] #행
+dy = [0, 1, 0, -1] #열
+
 
 def bfs(a,b):
     q = deque()
@@ -31,9 +33,11 @@ def bfs(a,b):
                 if maps[tx][ty]==1: #이동가능한 길인지, 방문하지 않은 곳인 경우
                     q.append((tx, ty))
                     maps[tx][ty] = maps[x][y] + 1
+    
+    return maps[n-1][m-1]
 
-bfs(0,0)
-print(maps[n-1][m-1])
+print(bfs(0,0))
+
 
 
 
