@@ -89,3 +89,18 @@ data = [[0]*n for _ in range(m)]
 list = [[0]*4]*3
 list[1][1] = 1
 print(list)
+
+
+# 큐 deque
+from collections import deque
+# 비어있는 큐 만들기
+deque = deque()
+# 원소가 있는 큐 만들기
+deque = deque([1, 2, 3])
+# 큐 최대 길이 명시하기(원소를 maxlen보다 더 많이 넣으면 maxlen이 자동 갱신됨)
+deque = deque(maxlen=5)
+
+
+#DFS 재귀깊이제한
+import sys
+sys.setrecursionlimit(10000)
