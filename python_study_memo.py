@@ -104,3 +104,10 @@ deque = deque(maxlen=5)
 #DFS 재귀깊이제한
 import sys
 sys.setrecursionlimit(10000)
+
+
+# 문자열 대문자, 소문자
+# 대문자로 : string.upper() - 반환함. 원본파괴 X
+# 소문자로 : string.lower() - 반환함. 원본파괴 X
+# 대문자인가? : string.isupper()
+# 소문자인가? : string.islower()
