@@ -115,8 +115,8 @@ num2.clear()
 print(num2)
 
 #리스트 - 자주 사용되는 메소드
-#index(x) : 값x의 위치(인덱스)를 리턴함. a=[1,2,3], a.index(1) => 0
-#count(x) : 리스트에서 값 x가 몇 개 있는지 센다. a.count(1) => 1
+#list.index(x) : 값x의 위치(인덱스)를 리턴함. a=[1,2,3], a.index(1) => 0
+#list.count(x) : 리스트에서 값 x가 몇 개 있는지 센다. a.count(1) => 1
 #sort(key, reverse) : 리스트를 오름차순으로 다시 정렬한다. reverse=True이면 내림차순.
 #copy() : 리스트를 복사해서 리턴. (얕은 복사)
 
@@ -307,3 +307,7 @@ for i in number:
 list = [1,2,3,4,5]
 for i in list[::-1]:
     print(i) # 5 4 3 2 1
+
+
+# 정렬 라이브러리에서 key를 활용한 소스코드/ 튜플의 요소를 기준으로 정렬하기
+# Sort/6-9.py
