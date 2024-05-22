@@ -111,3 +111,11 @@ sys.setrecursionlimit(10000)
 # 소문자로 : string.lower() - 반환함. 원본파괴 X
 # 대문자인가? : string.isupper()
 # 소문자인가? : string.islower()
+
+
+# 스와프
+# 0 인덱스와 1 인덱스의 원소 교체하기
+array = [3, 5]
+array[0], array[1] = array[1], array[0]
+
+print(array)

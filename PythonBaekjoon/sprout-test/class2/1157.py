@@ -13,6 +13,3 @@ if count_list.count(max) >= 2:
     print('?')
 else :
     print(chr(count_list.index(max) + 65))
-
-
-    
