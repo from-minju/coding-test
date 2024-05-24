@@ -84,7 +84,7 @@ print(math.factorial(3))
 
 
 # m행 n열의 2차원 리스트
-data = [[0]*n for _ in range(m)]
+# data = [[0]*n for _ in range(m)]
 #잘못된 방법
 list = [[0]*4]*3
 list[1][1] = 1
@@ -94,9 +94,9 @@ print(list)
 # 큐 deque
 from collections import deque
 # 비어있는 큐 만들기
-deque = deque()
+deques = deque()
 # 원소가 있는 큐 만들기
-deque = deque([1, 2, 3])
+deques = deque([1, 2, 3])
 # 큐 최대 길이 명시하기(원소를 maxlen보다 더 많이 넣으면 maxlen이 자동 갱신됨)
 deque = deque(maxlen=5)
 
@@ -119,3 +119,11 @@ array = [3, 5]
 array[0], array[1] = array[1], array[0]
 
 print(array)
+
+
+#Counter : 요소의 개수를 세어줌
+from collections import Counter
+ex_list = ['kim', 'kim', 'park', 'choi', 'kim', 'kim', 'kim', 'choi', 'park', 'choi']
+ex_counter = Counter(ex_list)
+print(ex_counter) #Counter({'kim': 5, 'choi': 3, 'park': 2})
+print(type(ex_counter)) #<class 'collections.Counter'>

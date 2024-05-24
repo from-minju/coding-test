@@ -25,5 +25,5 @@ while start <= end: # start > end가 될때까지 반복
         result = mid
         start = mid + 1
         
-print(end)
+print(result)
 

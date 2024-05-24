@@ -27,4 +27,4 @@ while(start <= end):
         start = mid + 1
 
 # 정답 출력
-print(end)
+print(result)
