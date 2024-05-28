@@ -127,3 +127,18 @@ ex_list = ['kim', 'kim', 'park', 'choi', 'kim', 'kim', 'kim', 'choi', 'park', 'c
 ex_counter = Counter(ex_list)
 print(ex_counter) #Counter({'kim': 5, 'choi': 3, 'park': 2})
 print(type(ex_counter)) #<class 'collections.Counter'>
+
+for i in ex_counter:
+    print(i, end=" ")#kim park choi
+print()
+for i in ex_counter:
+    print(ex_counter[i], end=" ")#5 2 3
+
+print(ex_counter.most_common()) #[('kim', 5), ('choi', 3), ('park', 2)]
+
+test1 = sorted(ex_counter.items(), key = lambda x : x[1], reverse=True)
+print(test1)
+
+x = Counter({'a':3, 'b':7, 'c':1})
+x = x.most_common()
+print(x)
