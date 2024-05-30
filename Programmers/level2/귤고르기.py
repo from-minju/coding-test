@@ -5,7 +5,6 @@ def solution(k, tangerine):
     # 요소의 개수가 많은 순서대로 정렬
     counter = Counter(tangerine).most_common()
 
-    print(counter)
     total=0
     answer = 0
 
