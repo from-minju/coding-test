@@ -59,15 +59,15 @@ def solution(numbers, hand):
             right_hand = num_loc
         #가운데 2,5,8,0 누른 경우
         else:
-            rd = get_distance(right_hand, num_loc) #오른손으로 누를 경우 거리
-            ld = get_distance(left_hand, num_loc) #왼손으로 누를 경우 겨리
+            rdist = get_distance(right_hand, num_loc) #오른손으로 누를 경우 거리
+            ldist = get_distance(left_hand, num_loc) #왼손으로 누를 경우 겨리
             
             # 왼손이 더 가까이 있음
-            if rd > ld:
+            if rdist > ldist:
                 answer += "L"
                 left_hand = num_loc
             # 오른손이 더 가까이 있음
-            elif rd < ld:
+            elif rdist < ldist:
                 answer += "R"
                 right_hand = num_loc
             # 왼손과 오른손의 거리가 같음
