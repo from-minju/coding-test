@@ -142,3 +142,13 @@ print(test1)
 x = Counter({'a':3, 'b':7, 'c':1})
 x = x.most_common()
 print(x)
+
+
+# 리스트의 깊은 복사
+# graph를 복사하여 temp에 담음.
+graph=[1,2,3,4,5]
+temp = [arr[:] for arr in graph]
+#방법2
+from copy import deepcopy
+temp=deepcopy(graph)
+

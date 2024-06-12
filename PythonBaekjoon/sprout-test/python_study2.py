@@ -272,8 +272,9 @@ print(", ".join(a)) #안녕, 하세요
 # - str.strip() : 문자열 및 공백 제거
 text = "##Hello, World!##"
 print(text.strip("#"))  
-ex_strip = "파          파   이 썬        연    습"
-print(ex_strip.strip()) #왜 공백이 제거가 안되지...?원래 돼야하는건데..?!
+ex_strip = "파          파   이 썬        연    습     "
+print(ex_strip.strip(), end="end") #문자열 끝의 공백만 지워짐. 
+print()
 
 # - str.startswith(), endswith() -> 리턴값 : True/False
 # str.startswith(시작하는문자, 시작지점) / str.endswith(끝나는문자, 시작지점, 끝지점)
