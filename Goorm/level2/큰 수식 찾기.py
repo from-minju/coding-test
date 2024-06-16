@@ -2,16 +2,16 @@
 
 # 연산자와 숫자로 나눠주는 함수
 def str_to_list (str) :
-    formula = []
+    formula = [] #수식 문자열을 리스트로 바꾼 값을 담는다.
 
     while True:
         for i in range(len(str)):
             if str[i] in ['*', '+', '-']:
-                formula.append(int(str[:i]))
+                formula.append(int(str[:i])) 
                 formula.append(str[i])
                 str = str[i+1:]
                 break
-        else:
+        else: #정수라면
             formula.append(int(str))
             break
     
