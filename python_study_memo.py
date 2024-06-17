@@ -147,8 +147,15 @@ print(x)
 # 리스트의 깊은 복사
 # graph를 복사하여 temp에 담음.
 graph=[1,2,3,4,5]
-temp = [arr[:] for arr in graph]
+temp = [arr for arr in graph]
 #방법2
 from copy import deepcopy
 temp=deepcopy(graph)
+
+
+# 정렬
+d = {"dream": 0, "car": 1, "blockdmask": 1, "error": 30, "app": 20, 'apple':10}
+sorted = sorted(d.items(), key= lambda x : (-x[1], x[0]))
+print(sorted)
+# [('error', 30), ('app', 20), ('apple', 10), ('blockdmask', 1), ('car', 1), ('dream', 0)]
 
