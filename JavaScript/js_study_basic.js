@@ -1,4 +1,5 @@
-//JavaScript 기초
+//JavaScript 기본
+
 
 //===== 변수와 상수 =====
 //:: 변수 선언 ::
@@ -217,6 +218,259 @@ console.log(counter) //>>>2
 // - << : 왼쪽시프트
 // - >> : 오른쪽시프트
 // - >>> : 부호없는오른쪽시프트
+
+
+
+
+
+//===== 비교 연산자 =====
+// - 불린형 반환
+console.log(2 < 1); //>>>false
+console.log(2 != 1) //>>>true
+
+// - 문자열 비교
+console.log('Z' > 'A') //>>>true
+console.log('aza' > 'abc') //>>>true
+
+// - 다른 자료형 간의 비교
+console.log('2' > 1) //>>>true
+console.log(true == 0) //>>>false
+// ==비교나 >비교에서는 피연산자를 숫자형으로 바꿔 연산하지만, Boolean()변환에서는 형변환을하지않는다. 문자열
+let a1 = 0;
+let b1 = "0";
+console.log(Boolean(a1)); //>>>false
+console.log(Boolean(b1)); //>>>true //숫자0으로 변환시키지 않음. 문자열이 존재하므로 true임.
+console.log(a1 == b1); //>>>true //b1을 숫자0으로 변환시켜 ==비교함.
+
+// - 일치 연산자
+console.log(0 == false) //>>>true
+console.log('' == false) //>>>true
+
+// - null, undefined와 비교하기
+console.log(null == undefined) //>>>true
+
+// - null vs 0
+console.log(null > 0) //>>>false
+console.log(null < 0) //>>>false
+console.log(null == 0) //>>>false
+console.log(null >= 0) //>>>true
+console.log(null <= 0) //>>>true
+
+// - undefined vs 0 
+// undefined는 비교불가능함. 다른값과 비교해서는 안됨. 항상 false
+console.log(undefined > 0) //>>>false
+console.log(undefined < 0) //>>>false
+console.log(undefined == 0) //>>>false
+console.log(undefined >= 0) //>>>false
+console.log(undefined <= 0) //>>>false
+
+
+
+
+
+//===== if와 '?'를 사용한 조건 처리 =====
+// :: if문 ::
+if (true) {
+    console.log("-----if문")
+}
+
+// :: else절 ::
+if (true) {
+    console.log("t r u e")
+} else {
+    console.log("f a l s e")
+}
+
+// :: else if ::
+let year = 2000;
+if (year < 2000 ) {
+    console.log("2000년 이전")
+}else if (year > 2000) {
+    console.log("2000년 이후")
+}else {
+    console.log("2000년 입니다.")
+}
+
+// :: 조건부 연산자 '?' ::
+let result = (year > 2000) ? '* 2000년 이후' : '* 2000년 or 이전';
+console.log(result)
+
+// :: 다중 '?' ::
+let ages = 25;
+let messages = (ages < 3) ? '아기야 안녕?' :
+  (ages < 18) ? '안녕!' :
+  (ages < 100) ? '환영합니다!' :
+  '나이가 아주 많으시거나, 나이가 아닌 값을 입력 하셨군요!';
+console.log(messages) //>>>환영합니다!
+
+
+
+
+
+//===== while과 for =====
+let ii = 3;
+while (ii) {
+    console.log(ii)
+    ii--;
+}
+
+// - do...while 반복문
+// 최소 한번의 실행을 보장하는 while문
+ii = 0;
+do {
+    console.log(ii); //0 1 2
+    ii++;
+} while (ii < 3);
+
+
+// - for
+// 두개의 세미콜론을 꼭 넣어주어야 함.
+for (let i = 0; i <3; i++) {
+    console.log(i) //0 1 2
+}
+
+// - 중첩 for문을 빠져나오고(break) 싶을 때
+labelName: for (let i = 0; i<3; i++){
+    for(let j = 0; j<3; j++){
+        console.log(i, j) //0 0
+        break labelName;
+
+    }
+}
+
+
+
+
+//===== switch문 =====
+a = 1;
+switch(a){
+    case 1:
+        console.log("값은 1");
+        break
+    case 2:
+    case 3:
+        console.log("값은 2또는 3")
+        break
+    case 4:
+        console.log("값은 4");
+        break
+    default:
+        console.log("모든 경우에 해당하지 않습니다.")
+}
+
+
+
+
+
+//===== 함수 =====
+// - 함수 선언
+function showMessage() {
+    console.log("안녕?")
+
+    // - 지역 변수
+    let localv = "지역변수입니다.";
+    console.log(localv)
+
+    // - 외부 변수
+    a = "외부변수입니다."
+    console.log(a)
+
+    // - 동일한 이름의 지역변수와 외부변수
+    let b = "지역변수b"
+    console.log(b)
+    this.b = "외부변수b"
+    console.log(this.b) //
+}
+showMessage();
+// console.log(localv)//error
+
+// - 함수 이름짓기
+// "get…" – 값을 반환함
+// "calc…" – 무언가를 계산함
+// "create…" – 무언가를 생성함
+// "check…" – 무언가를 확인하고 불린값을 반환함
+
+
+
+
+//===== 함수 표현식 =====
+// 함수를 변수에 할당
+let say = function() {
+    console.log("Hello???")
+};
+console.log(say) //>>>[Function: sayHi]
+say() //>>>Hello???
+
+// 
+function sayHi() {
+    console.log("say hi~~");
+}
+let v = sayHi; //괄호없음유의! 함수자체를 넘긴것. sayHi()라면 함수결과값을 넘김.
+v();
+sayHi();
+
+
+
+
+//===== 콜백 함수 =====
+function ask(question, yes, no) {
+    if (question) yes()
+    else no();
+}
+function showOk() {
+    console.log("동의하셨습니다.")
+}
+function showCancel() {
+    console.log("취소버튼을 누르셨습니다.")
+}
+ask("질문", showOk, showCancel) //>>>동의하셨습니다.
+//showOk, showCancel처럼 함수의 인수가 되는 함수를 콜백함수 또는 콜백이라 한다.
+
+// - 익명함수
+// 이름없이 선언한 함수. 익명함수는 변수에 할당된 것이 아니므로 스코프 바깥에서는 접근불가능.
+ask("질문2",
+    function() {console.log("동의하셨습니다.2")},
+    function() {console.log("취소버튼을 누르셨습니다.2")}
+); ///>>>동의하셨습니다.2
+
+
+
+
+
+//===== 함수 표현식 vs 함수 선언문 =====
+/*
+- 함수 표현식 : 실제 실행 흐름이 해당 함수에 도달했을 때 함수를 생성. 따라서 실행 흐름이 함수에 도달했을 때부터 해당 함수 사용가능
+- 함수 선언문 : 함수 선언문이 정의되기 전에도 호출 가능
+  - 이것이 가능한 이유 : 자바스크립트는 실행하기 전, 준비단계에서 전역에 선언된 함수 선언문을 찾고, 해당함수를 생성함.
+*/
+
+
+
+
+//===== 화살표 함수 기본 =====
+// 본문이 한 줄인 함수를 작성할 때 유용하다. 본문이 여러줄일땐 중괄호와 함께 작성
+let sum = (a, b) => a + b;
+/*
+let sum = function(a, b) {
+    return a+b;
+}
+*/
+
+let no_parameter = () => console.log("no parameter")
+no_parameter()
+
+// - 본문이 여러줄일때 화살표함수 사용법
+let sum2 = (a, b) => { //중괄호 사용
+    let result = a + b;
+    return result; //return 사용
+}
+
+
+
+
+
+
+
 
 
 
