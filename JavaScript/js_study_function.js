@@ -58,6 +58,15 @@ let newArray = array1.concat(array2, array3);
 console.log(newArray); // 출력: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 
+/**
+ * split()과 join()
+ */
+const originalStr = "apple, banana, cherry";
+const array = originalStr.split(", "); // 문자열을 배열로 변환
+console.log(array); // ["apple", "banana", "cherry"]
+
+const newStr = array.join(" | "); // 배열을 문자열로 변환
+console.log(newStr); // "apple | banana | cherry"
 
 
 
@@ -115,3 +124,49 @@ const nestedArray = [[1, 2], [3, 4], [5, 6]];
 const flatArray = nestedArray.reduce((acc, cur) => acc.concat(cur), []);
 console.log(flatArray);
 
+
+
+/**
+ * splice()
+ * 배열의 요소를 추가, 제거 또는 교체 (원본을변경.파괴적!, 반환값: 제거된요소)
+ * 문법 : array.splice(start, deleteCount, item1, item2, ...);
+ */
+
+
+
+
+/**
+ * 
+ * Set
+ * 중복을 허용하지 않는 값들의 집합을 나타냄. 배열->Set으로 변환하면 중복값 제거됨.
+ * 
+ */
+
+const numbers2 = [1, 2, 2, 3, 4, 4, 5];
+const uniqueNumbers = [...new Set(numbers2)];
+console.log(uniqueNumbers); // [1, 2, 3, 4, 5]
+
+/**
+ * Set객체 -> 배열
+ * 
+ */
+const myArray = [...mySet];
+
+// 1. 스프레드 연산자
+const mySet = new Set([1, 2, 3, 4, 5]);
+console.log(myArray); // [1, 2, 3, 4, 5]
+
+// 2. Array.from()
+const myArray2 = Array.from(mySet); 
+console.log(myArray2); // [1, 2, 3, 4, 5]
+
+
+/**
+ * Math.max / Math.min
+ * 배열의 최댓갑과 최솟값 구하기
+ */
+const numbers4 = [1, 2, 3, 4, 5];
+const max = Math.max(...numbers4);
+console.log(max); // 5
+
+console.log(Math.max(4, 8)) //8
