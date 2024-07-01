@@ -18,6 +18,14 @@ arr2.sort();
 console.log(arr2); //[ 1, 23, 54, 74, 8 ] => 오류 발생
 //sort()는 배열의 요소들을 문자열로 취급한다. -> 숫자를 정렬 시 값을 비교해줄 수 있는 함수를 넣어줘야 함.
 
+arr2.sort((a, b) => a - b); //[ 1, 8, 23, 54, 74 ]
+
+// 문자열 배열길이로 정렬
+let strings = ["apple", "orange", "banana", "pear"];
+strings.sort((a, b) => a.length - b.length);
+console.log(strings); // ["pear", "apple", "orange", "banana"]
+
+
 
 
 
@@ -150,10 +158,10 @@ console.log(uniqueNumbers); // [1, 2, 3, 4, 5]
  * Set객체 -> 배열
  * 
  */
-const myArray = [...mySet];
 
 // 1. 스프레드 연산자
 const mySet = new Set([1, 2, 3, 4, 5]);
+const myArray = [...mySet];
 console.log(myArray); // [1, 2, 3, 4, 5]
 
 // 2. Array.from()
