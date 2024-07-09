@@ -50,8 +50,36 @@ def solution(friends, gifts):
 
     return numOfNextMonthGift[0]
 
+def solution2(friends, gifts):
+    f = {v: i for i, v in enumerate(friends)} # {'muzi': 0, 'ryan': 1, 'frodo': 2, 'neo': 3}
+    l = len(friends)
+    p = [0] * l # 선물지수를 저장하는 배열 
+    answer = [0] * l
+    gr = [[0] * l for i in range(l)] # 주고받은선물수 표 (2차원배열)
 
+    # 1. 주고받은선물수 표 만들기
+    for i in gifts:
+        a, b = i.split()
+        gr[f[a]][f[b]] += 1
+    # print(gr) # [[0, 0, 2, 0], [3, 0, 0, 0], [1, 1, 0, 0], [1, 0, 0, 0]]
+
+    # 2. 선물지수 계산
+    for i in range(l):
+        # 내가 준 선물 - 내가 받은 선물
+        # = 행의합 - 열의합
+        p[i] = sum(gr[i]) - sum([k[i] for k in gr])
+
+    # 3. 다음달 받을 선물 수 계산
+    for i in range(l):
+        for j in range(l):
+            if gr[i][j] > gr[j][i]:
+                answer[i] += 1
+            elif gr[i][j] == gr[j][i]:
+                if p[i] > p[j]:
+                    answer[i] += 1
+
+    return max(answer)
 friends = ["muzi", "ryan", "frodo", "neo"]
 gifts = ["muzi frodo", "muzi frodo", "ryan muzi", "ryan muzi", "ryan muzi", "frodo muzi", "frodo ryan", "neo muzi"]
 
-print(solution(friends, gifts))
+print(solution2(friends, gifts))
