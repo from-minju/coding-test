@@ -18,16 +18,20 @@ k번 이상 신고된 유저 - 정지
 4. 메일 받은 횟수 return 
 1:55
 '''
+
+
 def solution(id_list, report, k):
     l = len(id_list)
-    reported = [[] for _ in range(l)]
-    result = [0 for _ in range(l)]
+    reported = [[] for _ in range(l)] # 유저별 신고한사람들의 id목록
+    result = [0 for _ in range(l)] # 유저별 메일받은 횟수
+
+    # 0. 딕셔너리 생성 {유저id : 인덱스}
     id = {}
     for i in range(l):
         id[id_list[i]] = i
     
     # 1. 신고 처리
-    # 신고당한사람 [신고한 사람1, 2, ...]
+    # 신고당한사람 : [신고한 사람1, 2, ...]
     for str in report:
         a, b = str.split(" ")
         
@@ -39,8 +43,25 @@ def solution(id_list, report, k):
     # 2. 정지 처리 (k번 이상 신고당한 사람)
     for arr in reported:
         if len(arr) >= k:
+    # 3. 메일 발송 횟수 계산
             for user in arr:
                 result[id[user]] += 1
             
     
     return result
+
+
+def solution2(id_list, report, k):
+    answer = [0] * len(id_list) # 결과메일 받은 횟수
+    reports = {x : 0 for x in id_list} # 유저별 신고당한 횟수
+
+    # 유저별 신고당한 횟수 계산
+    for r in set(report):
+        reports[r.split()[1]] += 1
+
+    # 결과메일 받은 횟수 계산
+    for r in set(report):
+        if reports[r.split()[1]] >= k:
+            answer[id_list.index(r.split()[0])] += 1
+
+    return answer
