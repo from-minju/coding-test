@@ -159,3 +159,8 @@ sorted = sorted(d.items(), key= lambda x : (-x[1], x[0]))
 print(sorted)
 # [('error', 30), ('app', 20), ('apple', 10), ('blockdmask', 1), ('car', 1), ('dream', 0)]
 
+
+# replace
+id = id.replace(s, "")
+# 숫자인지 확인
+s.isdigit()
