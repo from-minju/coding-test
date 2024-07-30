@@ -4,11 +4,8 @@ def solution(s):
     xCnt = 0 # x가 나온 횟수
     yCnt = 0 # x가 아닌 다른 글자들이 나온 횟수
     
-    while True:
-        
-        # 문자열의 남은 부분이 없으면 종료
-        if not s:
-            break
+    # 문자열의 남은 부분이 없으면 종료
+    while s:
         
         x = s[0]
         
