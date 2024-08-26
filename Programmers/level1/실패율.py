@@ -1,3 +1,4 @@
+# 실패율
 def solution(N, stages):
     
     # counter 초기화
